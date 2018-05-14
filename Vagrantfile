@@ -17,7 +17,7 @@ SUPPORTED_OS = {
   "coreos-alpha"  => {box: "coreos-alpha",       bootstrap_os: "coreos", user: "core", box_url: COREOS_URL_TEMPLATE % ["alpha"]},
   "coreos-beta"   => {box: "coreos-beta",        bootstrap_os: "coreos", user: "core", box_url: COREOS_URL_TEMPLATE % ["beta"]},
   "ubuntu"        => {box: "bento/ubuntu-16.04", bootstrap_os: "ubuntu", user: "vagrant"},
-  "centos"        => {box: "centos/7",           bootstrap_os: "centos", user: "vagrant"},
+  "centos-libvirt"        => {box: "centos/7",           bootstrap_os: "centos", user: "vagrant"},
 }
 
 # Defaults for config options defined in CONFIG
@@ -28,8 +28,8 @@ $vm_memory = 2048
 $vm_cpus = 1
 $shared_folders = {}
 $forwarded_ports = {}
-$subnet = "172.17.8"
-$os = "ubuntu"
+$subnet = "172.172.1"
+$os = "centos-libvirt"
 $network_plugin = "flannel"
 # The first three nodes are etcd servers
 $etcd_instances = $num_instances
